@@ -2,7 +2,7 @@ path = require 'path'
 
 module.exports = (grunt) ->
 
-  seleniumPath = path.resolve 'selenium'
+  seleniumPath = path.resolve './node_modules/protractor/selenium'
 
   grunt.initConfig
     env:
@@ -21,7 +21,7 @@ module.exports = (grunt) ->
 
     shell:
       selenium:
-        command: 'java -jar selenium/selenium-server-standalone-*.jar -Dwebdriver.chrome.driver=./selenium/chromedriver'
+        command: './node_modules/protractor/bin/webdriver-manager start'
         options:
           stdout: true
 
